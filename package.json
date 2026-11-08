@@ -1,27 +1,32 @@
 {
   "name": "winston-influxdb2",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "A Winston transport for InfluxDBv2",
   "author": "Mihael Lenic",
   "license": "MIT",
   "repository": "https://github.com/mihaellenic/winston-influxdb2",
   "files": [
-    "src/InfluxDB2Transport.ts"
+    "lib"
   ],
-  "main": "src/InfluxDB2Transport.ts",
-  "type": "module",
+  "main": "lib/InfluxDB2Transport.js",
+  "types": "lib/InfluxDB2Transport.d.ts",
   "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "dependencies": {
     "@influxdata/influxdb-client": "^1.33.2",
-    "typescript": "^5.0.4",
-    "winston": "^3.11.0",
     "winston-transport": "^4.5.0"
+  },
+  "peerDependencies": {
+    "winston": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "^18.15.11",
-    "prettier": "^3.2.5"
+    "prettier": "^3.2.5",
+    "typescript": "^5.0.4",
+    "winston": "^3.11.0"
   },
   "keywords": [
     "winston",
